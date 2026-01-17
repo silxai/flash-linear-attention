@@ -1,11 +1,7 @@
-# Copyright (c) 2023-2025, Songlin Yang, Yu Zhang
-# Modified for QuasarAttention
-
 import torch
 import torch.nn.functional as F
 import triton
 import triton.language as tl
-
 from fla.ops.utils.index import prepare_chunk_indices
 from fla.ops.quasar.forward_substitution import forward_substitution_kernel
 from fla.utils import IS_AMD, autocast_custom_bwd, autocast_custom_fwd, autotune_cache_kwargs, check_shared_mem, input_guard
