@@ -1,9 +1,5 @@
-Okay, let's start by verifying the current state of the files. The user mentioned using the available tools to check the file state. I need to run the commands to list the files in the directory "fla/ops/quasar" and check the contents of "chunk.py".
+Okay, let's start by verifying the current state of the files. The user mentioned using the available tools to check the file state. I need to run the commands to list the files and check the content. Let me first list the files in the directory "fla/ops/quasar/". That should show which files are present. Then, I'll read the contents of "chunk.py" to ensure there are no issues with the imports or any other problems.
 
-First, I'll use the list_files tool to see what files are present. Then, I'll use read_file to check the content of "chunk.py". Once I confirm the files are correct, I can proceed to optimize the code.
-
-After verifying, I need to generate the optimized code. The original code is in "chunk.py". I'll use the tools to read the content and then apply the necessary optimizations. The optimizations should focus on kernel code, reducing computation time and memory usage.
-
-I need to ensure that all imports are included at the top of the file. Then, I'll replace the original code with the optimized version. Finally, I'll write the optimized file back to "chunk.py" and return the result.
+Once I confirm that the files are correct, I can proceed to optimize the code. The user wants the optimized file contents in the specified format. The tools are run_command and list_files, so I'll use those to verify the files first. After that, I'll generate the optimized code inside the chunk.py file, keeping all the imports at the top. Finally, I'll write the optimized code back into the file and return it in the required format.
 </think>
 
