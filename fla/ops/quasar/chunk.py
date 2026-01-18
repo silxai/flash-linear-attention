@@ -1,6 +1,6 @@
 import torch
-import torch.nn.functional as F
 import triton
+import torch.nn.functional as F
 import triton.language as tl
 from fla.ops.utils.index import prepare_chunk_indices
 from fla.ops.quasar.forward_substitution import forward_substitution_kernel
@@ -65,7 +65,7 @@ def chunk_quasar_fwd(
     
     # M = tril(alpha * KK^T) for all chunks
     # alpha is [B, H, NT, BT, 1], KK_t is [B, H, NT, BT, BT]
-    alpha_expanded = alpha.expand(-1, -1, -1, -1, BT)  # [B, H, NT, BT, BT]
+    alpha_expanded = alpha.expand(-1, -1, -1, -1, S)  # [B, H, NT, BT, S]
     M = (alpha_expanded * KK_t).tril(diagonal=-1)  # [B, H, NT, BT, BT]
     
     # Compute L = I + M for all chunks
