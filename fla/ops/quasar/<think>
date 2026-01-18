@@ -1,13 +1,11 @@
-Okay, let's start by verifying the current state of the files. The user mentioned checking the available files to optimize. So I need to use the list_files tool to see what's there. Let me run that command.
+Okay, let's start by verifying the current state of the files. The user mentioned using the available tools to interact with the file system. The first step is to list the files in the directory "fla/ops/quasar/". Once I have that, I can check if the "chunk.py" file exists and its contents.
 
-After listing, I see that "chunk.py" is present. Then, I'll read the contents of that file to check the imports and the existing code. The imports are correct, and the code seems to be there. Now, I need to optimize the chunk_quasar_fwd function.
+After checking, I see that the "chunk.py" file is present. Now, I need to read its contents to see what's currently in place. The next step is to optimize the code. The user wants the optimized kernel code inside the functions, not the function signatures. 
 
-Looking at the original code, there are a lot of repeated operations. For example, the chunk_indices are prepared, and then the code processes each chunk. The forward_substitution_kernel is used, which is a Triton kernel. The user wants to optimize this using the tools provided.
+Looking at the existing code, there's a lot of PyTorch operations. I notice that the forward_substitution_kernel is used, which is a Triton kernel. The current code uses a lot of loops and matrix multiplications. To optimize, I should reduce the number of loops and use more efficient operations. 
 
-I'll check if there are any redundant lines or can be vectorized. The original code has a lot of matrix multiplications and reshaping. Maybe the forward_substitution_kernel can be optimized by using more efficient operations. Also, the code uses autotune_cache_kwargs and check_shared_mem, which might be part of the optimization process.
+For example, the current code has a loop for each chunk, which is redundant. Instead, I can use a single loop with vectorized operations. Also, the matrix multiplications can be optimized by using torch.matmul instead of manual loops. 
 
-I need to ensure that the optimized code doesn't change the function signatures or the exported names. The function chunk_quasar_fwd is already exported, so I should keep that. The optimized code should replace the original with more efficient Triton kernels where possible.
-
-After optimizing, I'll write the new code back into the chunk.py file. The final output should include all imports and the optimized function with the necessary parameters.
+I need to make sure that all the imports are preserved. The imports are triton, torch, and the functions. Then, I'll replace the existing code with the optimized version. Finally, I'll write the optimized file back to "chunk.py" and return the result.
 </think>
 
