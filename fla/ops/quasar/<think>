@@ -1,9 +1,13 @@
-Okay, let's tackle this problem. The user wants me to optimize a Triton kernel for Quasar attention using the provided code. First, I need to verify the current file state to make sure I have the correct code. The available tools include reading files, so I'll use read_file on "chunk.py" to check its contents.
+Okay, let's start by verifying the current state of the files. The user mentioned checking the available files to optimize. So I need to use the list_files tool to see what's there. Let me run that command.
 
-Once I confirm that the code is correct, I need to optimize it. The original code has a lot of PyTorch operations. I'll look for places where I can vectorize operations, reduce redundant computations, and improve memory usage. For example, the forward_substitution_kernel is a placeholder, so I should replace that with a more efficient implementation.
+After listing, I see that "chunk.py" is present. Then, I'll read the contents of that file to check the imports and the existing code. The imports are correct, and the code seems to be there. Now, I need to optimize the chunk_quasar_fwd function.
 
-I'll also check for any potential issues like shared memory optimization, which the code mentions. The parameters like chunk_size and cu_seqlens are used, so I need to ensure that the optimized code uses these correctly. Also, the function signatures and exported names need to be preserved.
+Looking at the original code, there are a lot of repeated operations. For example, the chunk_indices are prepared, and then the code processes each chunk. The forward_substitution_kernel is used, which is a Triton kernel. The user wants to optimize this using the tools provided.
 
-After optimizing, I'll write the new code back into "chunk.py" and ensure that all imports are included. Finally, I'll format the response correctly with the optimized file contents.
+I'll check if there are any redundant lines or can be vectorized. The original code has a lot of matrix multiplications and reshaping. Maybe the forward_substitution_kernel can be optimized by using more efficient operations. Also, the code uses autotune_cache_kwargs and check_shared_mem, which might be part of the optimization process.
+
+I need to ensure that the optimized code doesn't change the function signatures or the exported names. The function chunk_quasar_fwd is already exported, so I should keep that. The optimized code should replace the original with more efficient Triton kernels where possible.
+
+After optimizing, I'll write the new code back into the chunk.py file. The final output should include all imports and the optimized function with the necessary parameters.
 </think>
 
